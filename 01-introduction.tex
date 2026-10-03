@@ -1,0 +1,67 @@
+\chapter{INTRODUCTION}
+\pagebreak
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+
+Handwriting is an important skill during childhood and is influenced by several cognitive, sensory, and motor processes. Difficulties in handwriting have been reported among children with different developmental and learning-related conditions, making handwriting an area of interest in educational and developmental research. Previous studies have examined handwriting quality through characteristics such as letter formation, size, spacing, consistency, and writing performance.
+
+The development of computer vision and deep learning techniques has created new opportunities for analysing handwritten samples automatically. Instead of relying entirely on manual assessment, image-based methods can be used to extract visual patterns from handwriting and classify them using machine learning models. Convolutional Neural Networks (CNNs), in particular, have been widely applied to image classification and handwriting recognition tasks.
+
+Arabic handwriting presents additional challenges for automated analysis due to the characteristics of the Arabic writing system. Arabic letters can take different forms depending on their position within a word, and handwritten samples can vary considerably between writers. These characteristics make Arabic handwriting recognition and analysis a distinct computer vision problem. Existing datasets, such as Hijja, have also demonstrated the availability of children's Arabic handwriting data and have been used in research involving deep learning approaches.
+
+Despite the availability of research on handwriting analysis and children's Arabic handwriting recognition, there remains an opportunity to investigate whether visual characteristics in Arabic handwriting can be used as indicators associated with developmental or learning-related conditions. This is particularly relevant when considering the limited availability of labelled Arabic children's handwriting data for this type of classification task.
+
+Therefore, this project proposes the development of an artificial intelligence-based system that uses computer vision and deep learning to analyse Arabic handwriting samples produced by children. The system will process handwriting images and attempt to classify patterns associated with the selected target condition or conditions. The final target condition will be determined based on the findings of the literature review, the availability and quality of collected data, and the performance of the developed model.
+
+The project will also investigate the challenges associated with collecting and analysing Arabic handwriting samples from children. By combining Arabic handwriting data with computer vision and deep learning techniques, the project aims to explore the feasibility of using handwriting images as a source of information for automated screening and classification.
+
+% ============================================================
+\section{Project Scope}
+\label{sec:scope}
+
+This section explains what our system, Baseera, will do and what it will not do.
+
+Baseera is an AI system that helps in the early screening of dyslexia and ADHD by analyzing how Arabic-speaking children write by hand. It will not give a final diagnosis, but it will give an early warning so parents and teachers can take the child to a specialist if needed.
+
+The user uploads a photo or scan of the child's handwriting. The image then goes through some processing steps like removing noise and making it clearer so it's easier to analyze. After that, the system looks at specific things like letter size, how consistent the writing line is, spacing between letters, how hard the child is pressing the pen, and if any letters are reversed or written wrong. Based on these features, the model classifies the writing as either normal or showing signs that might need attention. Finally, it shows a simple result explaining the finding, and if there are signs of a disorder, it recommends the family consult a specialist.
+
+The system does not diagnose the child medically or give a treatment plan. It only works with Arabic handwriting, not other languages, and only analyzes handwritten text, not typed text. It is also limited to dyslexia and ADHD, not other disorders.
+
+For the technical side, we are using Python with OpenCV for image processing, and TensorFlow or PyTorch to build the model. We chose a CNN (Convolutional Neural Network) since it works well with images. For the dataset, we are using Hijja2, which has handwriting samples from 591 Saudi children between 7 and 12 years old, with more than 47,000 labeled letter images, which matches the age group we need.
+
+One limitation is that Hijja2 is made for recognizing letters, not for diagnosing dyslexia or ADHD directly. So we will need to extract handwriting features ourselves and connect them to the disorder indicators manually.
+
+% ============================================================
+\section{Aim and Objectives}
+\label{sec:aim}
+
+% TODO: Aim = the overall goal of the project.
+% TODO: Objectives = the specific steps you will take to achieve the aim.
+
+% ============================================================
+\section{Motivation}
+\label{sec:motivation}
+
+Early discovery of neurodevelopmental disorders, specifically Dyslexia and Attention-Deficit/Hyperactivity Disorder (ADHD), is essential for supporting a child's academic progress and psychological well-being. Children with these conditions often struggle quietly with learning in classrooms, where undiscovered learning difficulties can lead to academic underachievement or failure, frustration, and low self-confidence.
+
+In conventional educational settings, diagnosing Dyslexia or ADHD requires comprehensive clinical evaluations and behavioral assessments by trained specialists. However, this process is frequently time-consuming and costly, which often causes significant delays in identification during crucial early developmental stages.
+
+Handwriting serves as a direct window into early diagnosis, visual-spatial coordination, and cognitive processing. Subtle handwriting anomalies---such as irregular spacing, stroke variations, letter misalignments, and inconsistent pressure---are recognized as early indicators of underlying learning and attention challenges. While computer-assisted handwriting tools have been widely researched for Latin scripts, analyzing Arabic handwriting presents distinct technical challenges due to its cursive structure, contextual letter shapes, and dots. Consequently, automated screening tools dedicated to Arabic handwriting remain limited.
+
+Driven by these factors, project \textbf{Baseera} aims to develop an accessible, AI-powered screening tool designed to analyze Arabic student handwriting patterns. By providing a fast and non-invasive preliminary assessment, \textbf{Baseera} seeks to assist educators and practitioners in detecting at-risk students early, thereby enabling timely support and targeted educational interventions.
+
+% ============================================================
+\section{Project Plan and Schedule}
+\label{sec:plan}
+
+% TODO: Describe the overall plan, the planned tasks, and any changes to it.
+% Include timing for tasks and deliverables (Gantt chart: duration estimates,
+% start/finish dates, and the sequence of tasks).
+
+% ============================================================
+\section{Outline of the Report}
+\label{sec:outline}
+
+% TODO: A concise description of the coming chapters and their sections.

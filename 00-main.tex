@@ -1,0 +1,179 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage{indentfirst}
+\setlength{\parindent}{0pt}
+% ======================================================================
+% Packages Used
+% ======================================================================
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=1.in]{geometry}
+\usepackage{tocloft}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage[titletoc]{appendix}
+\usepackage{setspace}\doublespacing
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{subcaption} % for adding two figures side by side
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{etoolbox}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue]{hyperref}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% ======================================================================
+% Template Defined Commands
+% ======================================================================
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftafterlottitle}{\hfill}
+
+% Project, supervisor and team names: define ONCE here, use everywhere.
+\newcommand{\projecttitle}{Baseera} % TODO: replace with the full project title
+\newcommand{\supervisorname}{\textbf{Dr. Name of Supervisor}} % TODO
+
+\newcommand{\firststudentname}{\textbf{Shihanah Alazzaz}}
+\newcommand{\firststudentid}{\textbf{441203631}}
+\newcommand{\secondstudentname}{\textbf{Adeem Alfurayh}}
+\newcommand{\secondstudentid}{\textbf{441203326}}
+\newcommand{\thirdstudentname}{\textbf{Lana Alnwiser}}
+\newcommand{\thirdstudentid}{\textbf{432205194}}
+
+% ======================================================================
+% Pages Setup
+% ======================================================================
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+\addto\captionsenglish{\renewcommand{\bibname}{References}}
+
+\fancyfoot[CE,CO]{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% ======================================================================
+% Acronyms - add yours here (use \ac{key} in the text)
+% ======================================================================
+\usepackage{acro}
+\acsetup{first-style=short}
+\DeclareAcronym{adhd}{
+  short = ADHD,
+  long  = Attention-Deficit/Hyperactivity Disorder,
+  tag   = abbrev
+}
+\DeclareAcronym{ai}{
+  short = AI,
+  long  = Artificial Intelligence,
+  tag   = abbrev
+}
+\DeclareAcronym{cnn}{
+  short = CNN,
+  long  = Convolutional Neural Network,
+  tag   = abbrev
+}
+
+% ======================================================================
+% Document Starts Here
+% ======================================================================
+\begin{document}
+
+\begin{titlepage}
+  \pagenumbering{gobble}
+
+  % header
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/essentials/header1.jpg}
+  \end{center}
+
+  % Project title
+  \begin{center}
+    \vspace{1cm}
+    \huge
+    \textbf{\projecttitle}\\
+    \Large
+    \vspace{1cm}
+    \textit{Students:}\\
+    \Large
+
+    \begin{tabular}{lr}
+      \firststudentname  & \firststudentid  \\
+      \secondstudentname & \secondstudentid \\
+      \thirdstudentname  & \thirdstudentid  \\
+    \end{tabular}
+
+    \vspace{1cm}
+    \Large
+    \textit{Supervisor:}\\
+    \supervisorname
+  \end{center}
+  \begin{center}
+    \vspace{1cm}
+    \textit{A project report submitted to Qassim University in partial fulfillment of the requirements \\
+    for the degree of B.Sc. in Computer Science.}\\
+
+    \vspace{1mm}
+    \textit{Qassim - Saudi Arabia\\
+    1448/1449 (2026/2027)}
+  \end{center}
+\end{titlepage}
+\pagenumbering{gobble}
+
+\pagenumbering{roman}
+\vspace*{1cm}
+
+% DO NOT change the order of these pages!
+% Certificate, dedication and acknowledgement are added at the end of phase 2.
+% \input{00-prefatory-certificate}
+% \input{00-prefatory-dedication}
+% \input{00-prefatory-acknowledgement}
+\input{00-prefatory-abstract}
+
+% table of contents, then clear the page
+\tableofcontents
+\clearpage
+
+% list of figures, then clear the page
+\listoffigures
+\clearpage
+
+% list of tables, then clear the page
+\listoftables
+\clearpage
+
+% all the acronyms
+\printacronyms[include=abbrev,name=Abbreviations]
+\pagenumbering{gobble}
+
+% start with the actual content
+\pagebreak
+\pagenumbering{arabic}
+\include{01-introduction}
+\include{02-literature}
+\include{03-problem-analysis}
+\include{04-system-design}
+
+% appendix (if any)
+\clearpage
+\appendix
+\include{05-appendix}
+
+% references
+\clearpage
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{IEEEtran}
+% Temporary: keeps BibTeX happy while there are no \cite commands yet.
+% DELETE this line once the report cites real references.
+\nocite{plamondon2000}
+\bibliography{ref.bib}
+
+\end{document}
